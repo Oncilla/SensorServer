@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Sensor Server</string>
+    <string name="action_about">About</string>
+
+    <string name="switch_server">Server</string>
+    <string name="textview_port"><![CDATA[Port (>1024)]]></string>
+    <string name="edittext_port">8081</string>
+    <string name="tv_ip_desc">Device IP</string>
+
+    <string name="sensorPage">sensors/</string>
+    <string name="mainPageHtmlStart"><![CDATA[<!DOCTYPE html> <html> <head> <title>Sensor Server</title></head><body>  <div id=\"header\"> <h1>Hi! I\'m your phone. Play with me!</h1> </div>  <div id=\"nav\"> <a href=\"/sensors\">Sensors</a><br> <a href=\"/vibration\">Vibration</a><br> <a href=\"/sound\">Sound</a><br> </div>]]></string>
+    <string name="mainPageHtmlEnd"><![CDATA[<div id=\"footer\"> Dominik Roos</div>  <style>  a:link  {color:#000000; background-color:transparent} a:visited {color:#000000; background-color:transparent} a:hover   {color:#000000; background-color:transparent} a:active  {color:#000000; background-color:transparent}  #header {     background-color:#002366;     color:white;     text-align:center;     padding:5px; } #nav {     line-height:30px;     background-color:#eeeeee;     height: 300px;     width:100px;     float:left;     padding:5px; } #section {     width:350px;     float:left;     padding:10px; } #footer {     position: fixed;     bottom: 0;     background-color:#002366;     color:white;     clear:both;     text-align:center;     padding:5px; } </style>  </body> </html>]]></string>
+    <string name="mainPageHtmlListStart"><![CDATA[<div id=\"section\">         <h1>Sensors</h1>         <p>                 List of all available sensors         </p>         <p>         <ul>]]></string>
+    <string name="mainPageHtmlListEnd"><![CDATA[</ul>         </p>         </div>]]></string>
+    <string name="vibratorPageHtmlStart"><![CDATA[<div id=\"section\"> <h1>Vibration</h1> <p> Make me vibrate. You can even specify a pattern! Please separate ms with \',\' </p> <p> <form> Pattern: <input type=\"text\" name=\"pattern\" value=\"]]></string>
+    <string name="vibratorPageHtmlEnd"><![CDATA[\"> <input type=\"submit\" value=\"Vibrate Pattern\"> </form> </p> </div>  ]]></string>
+    <string name="soundPageHtml"><![CDATA[<div id=\"section\"> <h1>Sound</h1> <p> Press buttons and enjoy.</br> For anti trolling reasons sound can also be deactivated from the activity. </p> <p> <form> <input type=\"hidden\" name=\"loop\" value=\"true\"> <input type=\"submit\" value=\"Loop Sound\"> </form> <br> <form> <input type=\"hidden\" name=\"loop\" value=\"false\"> <input type=\"submit\" value=\"Play Sound\"> </form> </br> <form><input type=\"hidden\" name=\"loop\" value=\"trues\"> <input type=\"submit\" value=\"Stop Sound\"> </form> </p> </div>]]></string>
+    <string name="button_stop_sound">Stop sound</string>
+    <string name="button_stop_vibration">Stop vibration</string>
+    <string name="badRequestPage"><![CDATA[<!DOCTYPE html> <html>  <header> <meta http-equiv=\"refresh\" content=\"0; URL=/\"> </header>  <body>  </body> </html>]]></string>
+    <string name="switch_web_socket">Use WebSockets</string>
+    <string name="sensorPageWebSocket">sensors-websocket/</string>
+    <string name="title_activity_about">About</string>
+    <string name="about_text"><a href="https://github.com/Oncilla/SensorServer/">Visit the GitHub page</a></string>
+
+
+</resources>

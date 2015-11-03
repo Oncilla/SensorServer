@@ -1,0 +1,77 @@
+
+    <script type="text/javascript">
+
+        document.observe("dom:loaded", function() {
+            function out(text) {
+                $("out").innerHTML = text;
+            }
+
+            if (!window.WebSocket) {
+                alert("FATAL: WebSocket not natively supported. Cannot access sensor data!");
+            }
+
+            var ws;
+
+
+            $("uriForm").observe("submit", function(e) {
+                e.stop();
+                ws = new WebSocket($F("uri"));
+                 ws.onopen = function() {
+                                    ws.send("%s");
+                                    out("[opened connection]");
+                                }
+                ws.onmessage = function(e) {
+                    if(e.data == 'dis'){
+                        out("[closed connection]");
+                        $("uri", "connect").invoke("enable");
+                        $("disconnect").disable();
+                    }else{
+                        out(e.data);
+                    }
+                }
+                ws.onclose = function() {
+                    out("[closed connection]");
+                    $("uri", "connect").invoke("enable");
+                    $("disconnect").disable();
+                    ws = null;
+                }
+
+                $("uri", "connect").invoke("disable");
+                $("disconnect").enable();
+            });
+
+            $("disconnect").observe("click", function(e) {
+                e.stop();
+                if (ws) {
+                    ws.close();
+                    ws = null;
+                }
+            });
+        });
+
+
+    </script>
+  </head>
+  <body>
+
+<div id="header">
+<h1>Hi I'm your phone. Play with me!</h1>
+</div>
+
+<div id="nav">
+<a href="/sensors">Sensors</a><br>
+<a href="/vibration">Vibration</a><br>
+<a href="/sound">Sound</a><br>
+</div>
+
+<div id="section">
+<h1>%s</h1>
+<p>
+To get real time output please press connect.</br>
+Sensors will also be unregistered on page leave.
+</p>
+<p>
+<form id="uriForm"><input type="hidden" id="uri" value="ws://%s" style="hidden"> <input type="submit" id="connect" value="Connect"><input type="button" id="disconnect" value="Disconnect" disabled="disabled"></form><br>
+<form><textarea id="out" rows="7" cols="50" style="font-family:monospace; color:black;"></textarea></form><br>
+</p>
+</div>
