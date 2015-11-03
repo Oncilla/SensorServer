@@ -4,7 +4,7 @@ Sensor Server transforms your Android device in a RESTful server, which provides
 
 
 Device view
-<img src="https://github.com/Oncilla/SensorServer/blob/master/device.png?raw=true" width="480">
+<img src="https://github.com/Oncilla/SensorServer/blob/master/device.png?raw=true" height="480">
 
 Browser view
 <img src="https://github.com/Oncilla/SensorServer/blob/master/browser.png?raw=true" width="480">
